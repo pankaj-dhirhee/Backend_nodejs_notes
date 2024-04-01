@@ -1,0 +1,52 @@
+1.  npm init => 
+    Initialise the npm project.
+ 
+2.  npm install express => 
+    Install the express package from npm.
+
+3.  npm uninstall express => 
+    Uninstall the express package from 'node  modules' folder
+
+4.  npm install =>
+    Install all the dependencies that are written in package.json
+
+5.  npm => 
+    When you type this in terminal then it will display some information about npm 
+    commands, help etc.
+
+6.  npm --version =>
+    It will display version of 'npm' installes in your system.
+
+7.  node --version =>
+    It will display the version of 'nodejs' installed in your system
+
+8.  npm install express@1.2.3 =>
+    It will install '1.2.3 version' of express package from npm;
+
+9.  npm install nodemon --global =>
+    It will globally install the package 'nodemon'
+
+10. nodemon app.js =>
+    It will start the script 'app.js'. it wil restart automatically when changes 
+    will accur.
+
+11. npn i nodemon =>
+    It will install the package 'nodemon'. 'npm i' is shortcut of 'npm install'.
+
+
+For these things, go to package.json file
+ 
+ "nodemon": "^2.0.2"
+ Here: This '^' sign means, when you run 'npm i', then it will install exact '2.0.2'
+       version.
+       you can also use this '~' sign instead of this '^'.
+ 
+ "nodemon" ">1.0.1"
+ Here: This '>' sign means, when you run 'npm i', then it will install very latest
+       version of nodemon.
+ 
+ Versioning system:
+  Example: version: 1.2.3
+  Here: '1' means, New features are added and broke some old features.
+       '2' means, Added new features without breaking any old feature.
+       '3' means, Bug fixes

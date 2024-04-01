@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> Learning about static files in express </title>
+  <!-- Linking css file with express static -->
+  <!--
+    Here '../public' will be automatically added  because of:
+     app.use(express.static("./public"));
+    
+    You can also do like this:
+     href="../stylesheets/style.css"
+     
+    you cannot do like this:
+     href="../public/stylesheets/style.css"
+     Because /public always added automatically. if you do like that then 
+     path will be like this: href="../public/public/stylesheets/style.css"
+     
+     Note: images and js will also be same like these.
+  -->
+  <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+<body>
+  <h1> Learning to link any file from public folder while express static </h1>
+  <p> I am styled using css </p>
+</body>
+</html>
