@@ -10,7 +10,7 @@ const mongoose = require("mongoose");
        beecause it does not have any document.
 */
 const connect_to_database = () => {
-  const db_url = "mongodb+srv://dhirheepankaj:dhirhee_mongodb@cluster0.g9il8qo.mongodb.net/practice-db?retryWrites=true&w=majority";
+  const db_url = "";
   mongoose.connect(db_url)
   .then(() => {
     console.log("Mongo db connected");

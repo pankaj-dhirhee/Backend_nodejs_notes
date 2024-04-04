@@ -1,1 +1,0 @@
-mongodb+srv://dhirheepankaj:dhirhee_mongodb@cluster0.g9il8qo.mongodb.net/practice-db?retryWrites=true&w=majority

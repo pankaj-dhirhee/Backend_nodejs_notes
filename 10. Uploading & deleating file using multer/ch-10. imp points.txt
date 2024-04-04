@@ -1,2 +1,0 @@
-1. Multer does not create folder by itself
-
