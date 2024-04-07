@@ -1,7 +1,15 @@
 const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
+const dotenv = require("dotenv").config();
+if(dotenv.error){
+  console.log(`Dotenv error: ${dotenv.error}`)
+};
 
+
+const chapter_routes = require("./routes/chapter-routes.js")
+
+app.use("/", chapter_routes);
 // Function to connect to mongo db
 // You can call this function to test your db connection
 /* 1. Here we are creating database named 'practice-db'. in the url you will 
@@ -10,7 +18,7 @@ const mongoose = require("mongoose");
        beecause it does not have any document.
 */
 const connect_to_database = () => {
-  const db_url = "";
+  const db_url = process.env.DB_URL;
   mongoose.connect(db_url)
   .then(() => {
     console.log("Mongo db connected");
@@ -19,7 +27,7 @@ const connect_to_database = () => {
     console.log(error)
   });
 };
-// connect_to_database();
+connect_to_database();
 
 /* Notes: 
    1. In a database there are collection.
@@ -28,21 +36,7 @@ const connect_to_database = () => {
 
 
 
-/* This function is for exporting to another files. 
-   We need to export this function because mongodb connection will be needed 
-   in other files also.
-*/
-const connect_db = (database_url) => {
-  const db_url = database_url;
-  mongoose.connect(db_url)
-  .then(() => {
-    console.log("Mongo db connected");
-  })
-  .catch(error => {
-    console.log(error)
-  });
-};
-module.exports = connect_db
+
 
 
 const port = 4600;
