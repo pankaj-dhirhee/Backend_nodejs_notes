@@ -6,12 +6,11 @@ if(dotenv.error){
   console.log(`Dotenv error: ${dotenv.error}`)
 };
 
-
+// This is chapter routes. You can go ans see there chapters.
 const chapter_routes = require("./routes/chapter-routes.js")
-
 app.use("/", chapter_routes);
+
 // Function to connect to mongo db
-// You can call this function to test your db connection
 /* 1. Here we are creating database named 'practice-db'. in the url you will 
       find it. 
    2.  Here database is created. but you cannot see that in mongodb atlas 
@@ -34,12 +33,7 @@ connect_to_database();
    2. In a collection there are documents.
 */
 
-
-
-
-
-
-const port = 4600;
+const port = process.env.PORT;
 app.listen(port, () => {
-  console.log(`Server is running at; http://localhost:${port}`);
+  console.log(`Server is running at: http://localhost:${port}`);
 });
