@@ -19,8 +19,12 @@ app.use("/", chapter_routes);
 const connect_to_database = () => {
   const db_url = process.env.DB_URL;
   mongoose.connect(db_url)
-  .then(() => {
+  .then(async () => {
     console.log("Mongo db connected");
+    /* We are exporting this because we will use it furter to display all 
+       databases.
+    */
+    module.exports = mongoose.connection;    
   })
   .catch(error => {
     console.log(error)
@@ -28,11 +32,11 @@ const connect_to_database = () => {
 };
 connect_to_database();
 
+
 /* Notes: 
    1. In a database there are collection.
    2. In a collection there are documents.
 */
-
 const port = process.env.PORT;
 app.listen(port, () => {
   console.log(`Server is running at: http://localhost:${port}`);
