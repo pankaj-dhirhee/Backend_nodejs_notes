@@ -11,7 +11,7 @@ const read_document = async (req, res) => {
   async function finding_document_method_2(){
     // Filtering data on the basis of field "name" and "is_payed_fees"
     const data = await student_model.find({
-      name: "Ritu nirala",
+      name: "lalit",
       is_payed_fees: true
     }).limit(2);
     console.log(`Data: ${data}`);
