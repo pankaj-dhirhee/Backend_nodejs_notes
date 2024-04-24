@@ -18,6 +18,14 @@ const read_document = async (req, res) => {
     res.status(200).json(data)
   };
   finding_document_method_2();
+  
+  
+  /* Notes =>
+     * If you have more than 20 documents, then only 20 document will be shown at a 
+       time. If you want to see more documents then you can type 'it' and press enter.
+       
+     * While importing document in mongodb it must be smaller than 16 MB.
+  */
 };
 
 module.exports = read_document;
